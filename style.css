@@ -5,3 +5,58 @@
 	margin: 0;
 	padding: 0;
 }
+
+:root {
+	--color-main: #60b7df;
+	--color-light-font: rgb(235, 234, 234);
+	--color-bg-grayish: #6e6e6e;
+	--fs-footer: 1.1rem;
+
+}
+
+
+
+body {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	text-align: center;
+}
+
+header, footer {
+	background: var(--color-bg-grayish);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-light-font);
+	padding: 1rem;
+}
+
+footer {
+	padding: 0.7rem;
+	font-size: var(--fs-footer);
+
+}
+
+
+main {
+	background: var(--color-main);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gameboard {
+	width: 50%;
+	height: 50%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	background: red;
+	gap: 0.5rem;
+	padding: 0.5rem;
+}
+
+.gameboard > * {
+	background: rgb(175, 174, 174);
+}
