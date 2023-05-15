@@ -1,4 +1,5 @@
-const gameBoard = (() => {
+// GameBoard Module
+const GameBoard = (() => {
 
     // Creating empty board
     const currentBoard = [];
@@ -11,23 +12,22 @@ const gameBoard = (() => {
         currentBoard.push(BoardSlot)
     }
 
+    
     const initializeBoard = () => {
-        const gameboard = document.querySelector('.gameboard');
+        const GameBoard = document.querySelector('.gameboard');
         let initialCount = 0;
 
         currentBoard.forEach(BoardSlot => {
             newDiv = document.createElement('div');
             newDiv.setAttribute('boardIndex', initialCount);
-            gameboard.append(newDiv);
+            GameBoard.append(newDiv);
             initialCount++;
         });       
     };
 
-
-
-    return {initializeBoard, currentBoard}
+    
+    initializeBoard();
 
 })();
 
-
-gameBoard.initializeBoard();
+// Player Factory
