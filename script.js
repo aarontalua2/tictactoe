@@ -48,6 +48,7 @@ const GameController = (() => {
     }
 
     const checkWin = () => {
+        const board = GameBoard.getBoard();
         const allEqual = arr => arr.every(val => (val === arr[0] && val != undefined));
 
         // Winning combinations
