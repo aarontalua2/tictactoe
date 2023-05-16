@@ -7,7 +7,6 @@ const GameBoard = (() => {
             for (i=0; i<9; i++) {
                 board[i] = undefined;
         } 
-        return board; 
     })();
 
     const getBoard = () => board;
@@ -95,12 +94,12 @@ const DisplayController = (() => {
 
     const updateBoardDisplay = () => {
         gameboard.innerHTML = ``;
-        board = GameBoard.getBoard();
+        const board = GameBoard.getBoard();
         currentIndex = 0;
 
         board.forEach(element => {
 
-            boardItem = document.createElement('button');
+            const boardItem = document.createElement('button');
             boardItem.classList.add('board-item');
             boardItem.setAttribute('data-index', currentIndex);
 
