@@ -11,10 +11,8 @@
 	--color-light-font: rgb(235, 234, 234);
 	--color-bg-grayish: #6e6e6e;
 	--fs-footer: 1.1rem;
-
+	--fs-header: 1.8rem;
 }
-
-
 
 body {
 	min-height: 100vh;
@@ -23,40 +21,83 @@ body {
 	text-align: center;
 }
 
-header, footer {
+header,
+footer {
 	background: var(--color-bg-grayish);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: var(--color-light-font);
 	padding: 1rem;
+	font-size: var(--fs-header);
 }
 
 footer {
 	padding: 0.7rem;
 	font-size: var(--fs-footer);
-
 }
-
 
 main {
 	background: var(--color-main);
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
+	gap: 2rem;
+}
+
+.player-turn {
+	display: flex;
+	align-items: center;
+
+	& h3 {
+		font-size: 1.5rem;
+	}
 }
 
 .gameboard {
-	width: 50%;
-	height: 50%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	background: red;
 	gap: 0.5rem;
 	padding: 0.5rem;
+
+	& .board-item {
+		cursor: pointer;
+		background: rgb(175, 174, 174);
+		width: 10rem;
+		height: 10rem;
+
+		& p {
+			font-size: 4rem;
+			user-select: none;
+			pointer-events: none;
+		}
+	}
 }
 
-.gameboard > * {
-	background: rgb(175, 174, 174);
+#restart {
+	box-shadow: 0px 0px 14px 1px #9fb4f2;
+	background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color: #7892c2;
+	border-radius: 15px;
+	border: 1px solid #4e6096;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 19px 59px;
+	text-decoration: none;
+	text-shadow: 1px 3px 3px #283966;
+}
+#restart:hover {
+	background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color: #476e9e;
+}
+#restart:active {
+	position: relative;
+	top: 1px;
 }
