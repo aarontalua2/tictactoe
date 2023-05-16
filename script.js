@@ -122,8 +122,27 @@ const DisplayController = (() => {
 	};
 
 	const showTurn = () => {
+		const boardItems = document.querySelectorAll(".board-item");
 		const activePlayer = GameController.getActivePlayer();
 		HTMLPlayer.innerHTML = `<h3>Player ${activePlayer.getName()}'s turn (${activePlayer.getMark()})</h3>`;
+		let cursor = undefined;
+
+		if (activePlayer.getMark() == "❌") {
+			cursor = `url("assets/X.png"), default`;
+		} else {
+			cursor = `url("assets/O.png"), default`;
+		}
+
+		boardItems.forEach((item) => {
+			item.style.cursor = cursor;
+		});
+	};
+
+	const resetCursor = () => {
+		const boardItems = document.querySelectorAll(".board-item");
+		boardItems.forEach((item) => {
+			item.style.cursor = "pointer";
+		});
 	};
 
 	const showWinner = () => {
@@ -141,6 +160,8 @@ const DisplayController = (() => {
 		boardItems.forEach((item) => {
 			item.removeEventListener("click", GameController.playerMove);
 		});
+
+		resetCursor();
 	};
 
 	restartBtn.addEventListener("click", GameController.restartGame);

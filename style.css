@@ -64,7 +64,6 @@ main {
 	padding: 0.5rem;
 
 	& .board-item {
-		cursor: pointer;
 		background: rgb(175, 174, 174);
 		width: 10rem;
 		height: 10rem;
