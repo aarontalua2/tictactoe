@@ -137,6 +137,7 @@ main {
 	left: 0;
 	right: 0;
 
+ animation: append-animate 0.3s ease;
 
 }
 
