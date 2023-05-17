@@ -15,7 +15,7 @@
 }
 
 body {
-	min-height: 100vh;
+	height: 100vh;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	text-align: center;
@@ -68,8 +68,8 @@ main {
 		border: none;
 		border-radius: 1rem;
 		background: rgba(225, 248, 244, 0.637);
-		width: 10rem;
-		height: 10rem;
+		min-width: 5rem;
+		min-height: 5rem;
 
 		& p {
 			font-size: 4rem;
