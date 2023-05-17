@@ -97,11 +97,14 @@ const GameController = (() => {
 // Display Controller
 const DisplayController = (() => {
 	const HTMLPlayer = document.querySelector(".player-turn");
-	const restartBtn = document.querySelector("#restart");
+	const restartBtns = document.querySelectorAll(".restart");
 	const boardArray = GameBoard.getBoard();
+	const endround = document.querySelector('.endround');
+	const message = document.querySelector('.message')
 	let currentIndex = 0;
 
 	const initializeHTML = () => {
+		endround.style.display = 'none';
 		const HTMLBoard = document.querySelector(".gameboard");
 		HTMLBoard.innerHTML = ``;
 		boardArray.forEach((item) => {
@@ -146,12 +149,14 @@ const DisplayController = (() => {
 	};
 
 	const showWinner = () => {
-		console.log(`Player ${GameController.getActivePlayer().getName()} won!!`);
+		endround.style.display = 'flex';
+		message.innerHTML = `<p>Player ${GameController.getActivePlayer().getName()} won!!</p>`
 		removeEventListener();
 	};
 
 	const showDraw = () => {
-		console.log("It's a draw!!");
+		endround.style.display = 'flex';
+		message.innerHTML = `<p>It's a draw!!</p>`
 		removeEventListener();
 	};
 
@@ -164,7 +169,9 @@ const DisplayController = (() => {
 		resetCursor();
 	};
 
-	restartBtn.addEventListener("click", GameController.restartGame);
+	restartBtns.forEach(button => {
+		button.addEventListener("click", GameController.restartGame)
+	});
 
 	// First call
 	initializeHTML();
