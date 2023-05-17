@@ -68,11 +68,11 @@ main {
 		border: none;
 		border-radius: 1rem;
 		background: rgba(225, 248, 244, 0.637);
-		min-width: 5rem;
-		min-height: 5rem;
+		min-width: 7rem;
+		min-height: 7rem;
 
 		& p {
-			font-size: 4rem;
+			font-size: 3.5rem;
 			user-select: none;
 			pointer-events: none;
 		}
