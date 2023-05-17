@@ -121,7 +121,11 @@ const DisplayController = (() => {
 
 	const addMark = (index, player) => {
 		const target = document.querySelector(`[data-index="${index}"]`);
-		target.innerHTML = `<p>${player.getMark()}</p>`;
+		const markText = document.createElement('p');
+		markText.classList.add('player-mark');
+		markText.textContent = `${player.getMark()}`;
+		target.append(markText);
+		
 	};
 
 	const showTurn = () => {

@@ -55,6 +55,18 @@ main {
 	}
 }
 
+@keyframes append-animate {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;	
+	}
+}
+
+
 .gameboard {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -70,6 +82,7 @@ main {
 		background: rgba(225, 248, 244, 0.637);
 		min-width: 7rem;
 		min-height: 7rem;
+		
 
 		& p {
 			font-size: 3.5rem;
@@ -78,6 +91,12 @@ main {
 		}
 	}
 }
+
+.player-mark {
+	animation: append-animate 0.1s ease;
+}
+
+
 
 .restart {
 	box-shadow: 0px 0px 14px 1px #9fb4f2;
